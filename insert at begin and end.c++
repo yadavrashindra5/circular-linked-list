@@ -137,15 +137,53 @@ void Node::delete_a_node(int x)
 int main()
 {
     Node n;
-    n.insert_at_last(8);
-    n.insert_at_last(9);
-    n.insert_at_last(10);
-    n.insert_at_last(11);
-    n.print();
-    cout<<"\n";
-    n.insert_at_beginning(13);
-    n.insert_at_beginning(12);
-    n.print();
-    n.delete_last_node();
+
+    do{
+    cout<<"*************************************************************\n";
+    cout<<" 1 .Insert a Node at beginning.\n";
+    cout<<" 2 .Insert a Node at last.     \n";
+    cout<<" 3 .Delete last Node.          \n";
+    cout<<" 4 .Delete First Node.         \n";
+    cout<<" 5 .Delete a Node.             \n";
+    cout<<" 6 .View your Data\n";
+    cout<<" 7 .Exit\n";
+    cout<<"*************************************************************\n";
+    int choice;
+    cout<<"Enter your choice\n";
+    cin>>choice;
+    switch(choice)
+        {
+        case 1:
+            cout<<"Enter the Data you want to store\n";
+            int x;
+            cin>>x;
+            n.insert_at_beginning(x);
+            break;
+        case 2:
+            cout<<"Enter the Data you want to store\n";
+            int y;
+            cin>>y;
+            n.insert_at_last(y);
+            break;
+        case 3:
+            n.delete_last_node();
+            break;
+        case 4:
+            n.delete_first_node();
+            break;
+        case 5:
+            cout<<"Enter the data you want to delete\n";
+            cin>>x;
+            n.delete_a_node(x);
+            break;
+        case 6:
+            n.print();
+            break;
+
+        }
+        if(choice==7)
+            break;
+
+    }while(true);
 
 }
