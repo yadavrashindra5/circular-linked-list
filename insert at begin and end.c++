@@ -7,6 +7,8 @@ public:
     void insert_at_last(int x);
     void insert_at_beginning(int x);
     void delete_last_node();
+    void delete_first_node();
+    void delete_a_node(int x);
     void print();
 };
 Node *Head=NULL;
@@ -85,6 +87,50 @@ void Node::delete_last_node()
         preptr->Next=ptr->Next;
     }
 }
+
+void Node::delete_first_node()
+{
+    Node*temp=Head;
+    if(Head==NULL)
+    {
+        cout<<"Under Flow\n";
+    }
+    else{
+        while(temp->Next!=Head)
+        {
+            temp=temp->Next;
+        }
+        temp->Next=Head->Next;
+        Head=temp->Next;
+
+    }
+}
+
+
+void Node::delete_a_node(int x)
+{
+    Node *ptr,*preptr;
+    ptr=Head;
+    preptr=ptr;
+    if(Head==NULL)
+    {
+        cout<<"Under Flow\n";
+    }
+    else{
+        while(ptr->Data!=x)
+        {
+            preptr=ptr;
+            ptr=ptr->Next;
+        }
+        preptr->Next=ptr->Next;
+    }
+}
+
+
+
+
+
+
 
 
 
