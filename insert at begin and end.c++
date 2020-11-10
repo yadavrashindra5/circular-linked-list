@@ -76,6 +76,10 @@ void Node::delete_last_node()
     {
         cout<<"Under Flow\n";
     }
+    else if(Head==Head->Next)
+    {
+        Head=NULL;
+    }
     else{
 
         while(ptr->Next!=Head)
@@ -94,6 +98,10 @@ void Node::delete_first_node()
     if(Head==NULL)
     {
         cout<<"Under Flow\n";
+    }
+    else if(Head==Head->Next)
+    {
+        Head=NULL;
     }
     else{
         while(temp->Next!=Head)
