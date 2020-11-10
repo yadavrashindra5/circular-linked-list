@@ -6,6 +6,7 @@ Node *Next;
 public:
     void insert_at_last(int x);
     void insert_at_beginning(int x);
+    void delete_last_node();
     void print();
 };
 Node *Head=NULL;
@@ -63,6 +64,30 @@ void Node::insert_at_beginning(int x)
     }
 }
 
+
+void Node::delete_last_node()
+{
+    Node *ptr,*preptr;
+    ptr=Head;
+    preptr=ptr;
+    if(Head==NULL)
+    {
+        cout<<"Under Flow\n";
+    }
+    else{
+
+        while(ptr->Next!=Head)
+        {
+            preptr=ptr;
+            ptr=ptr->Next;
+
+        }
+        preptr->Next=ptr->Next;
+    }
+}
+
+
+
 int main()
 {
     Node n;
@@ -75,5 +100,6 @@ int main()
     n.insert_at_beginning(13);
     n.insert_at_beginning(12);
     n.print();
+    n.delete_last_node();
 
 }
